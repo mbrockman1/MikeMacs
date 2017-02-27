@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- package-refresh-contents
- evil-mode
- muse-mode
+ undo
+ eshell
+ shell
+ package-menu-mark-upgrades
+ list-packages
  package-install
- el-get-install
- kill-buffer
- org-mode
+ neotree
 )
 
 ;; ----- smex-data -----
@@ -15,7 +15,7 @@
  (ftp . 1)
  (python-mode . 4)
  (python-shell-switch-to-shell . 2)
- (shell . 26)
+ (shell . 31)
  (eww . 4)
  (shell-mode . 2)
  (5x5 . 1)
@@ -25,14 +25,14 @@
  (find-tag . 1)
  (find-file . 2)
  (floobits-join-workspace . 15)
- (package-install . 14)
+ (package-install . 16)
  (floobits-clear-highlights . 3)
  (py-autopep8 . 2)
  (floobits-leave-workspace . 4)
  (floobits-debug-output . 1)
  (eww-open-file . 2)
  (switch-to-next-buffer . 6)
- (kill-buffer . 11)
+ (kill-buffer . 12)
  (quit-window . 7)
  (package-list-packages . 1)
  (buffer-menu . 4)
@@ -44,21 +44,21 @@
  (Helper-help . 1)
  (help-mode . 1)
  (cua-cut-region . 1)
- (evil-mode . 4)
+ (evil-mode . 5)
  (query-replace . 4)
  (better-shell-shell . 2)
  (elscreen-start . 1)
  (pymacs-load . 2)
  (pymacs-eval . 1)
  (freex-mode . 4)
- (eval-buffer . 2)
- (org-wiki-index . 5)
- (org-wiki-helm . 8)
+ (eval-buffer . 9)
+ (org-wiki-index . 8)
+ (org-wiki-helm . 9)
  (org-wiki-make-page . 2)
  (org-wiki-make-menu . 1)
  (org-wiki-close . 1)
- (org-wiki-link . 3)
- (org-wiki-header . 1)
+ (org-wiki-link . 7)
+ (org-wiki-header . 2)
  (org-wiki-helm-read-only . 1)
  (org-wiki-dired . 2)
  (org-list-send-list . 1)
@@ -67,7 +67,7 @@
  (org-wiki-panel . 1)
  (org-html-export-as-html . 2)
  (freex-meta-find . 10)
- (org-mode . 2)
+ (org-mode . 8)
  (minor-mode-menu-from-indicator . 3)
  (sieve-manage . 1)
  (diff-minor-mode . 1)
@@ -75,8 +75,22 @@
  (freex-meta-edit-tag-parents-in-minibuffer . 1)
  (mouse-major-mode-menu . 1)
  (describe-minor-mode-from-indicator . 1)
- (el-get-install . 4)
+ (el-get-install . 5)
  (manage-minor-mode . 1)
  (muse-mode . 1)
  (package-refresh-contents . 1)
+ (tetris . 2)
+ (org-capture . 3)
+ (cython-mode . 1)
+ (org-refile . 9)
+ (customize-variable . 2)
+ (org-schedule . 1)
+ (org-deadline . 1)
+ (org-wiki-insert . 2)
+ (neotree . 1)
+ (inferior-python-mode . 4)
+ (list-packages . 1)
+ (package-menu-mark-upgrades . 1)
+ (eshell . 5)
+ (undo . 1)
 )

@@ -24,9 +24,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(mouse-1-click-in-non-selected-windows t)
+ '(org-agenda-files nil)
+ '(org-refile-targets (quote ((org-agenda-files :maxlevel . 6))))
  '(package-selected-packages
    (quote
-    (muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode jedi better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
+    (ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode jedi better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -34,13 +36,28 @@
  ;; If there is more than one, they won't work right.
  )
 
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
+(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+
 (require 'evil)
 (evil-mode 1)
+
+(show-paren-mode 1)
+
+(setq auto-save-file-name-transforms
+          `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
 
 (setq mac-option-modifier 'meta) ; set alt-key to meta
 (setq mac-escape-modifier nil) ; set esc-key to nil
 
 (ido-mode 1)
+(setq org-completion-use-ido t)
 
 (load-theme 'zenburn t)
 
@@ -60,13 +77,25 @@
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
+
 (require 'projectile)
 (projectile-mode 1)
 
-;; (x-focus-frame nil)
-
 (require 'dashboard)
 (dashboard-setup-startup-hook)
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+
 
 (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
 ;; Value can be
@@ -96,3 +125,19 @@
 (setq ropemacs-enable-autoimport t)
 
 (add-to-list 'load-path "/Users/michael/.emacs.d/el-get/freex/") (load "freex-conf")
+
+(require 'org-wiki)
+(org-wiki-make-menu)
+(setq org-wiki-location "~/Dropbox/org_notes/")
+
+(defvar ido-dont-ignore-buffer-names '("*dashboard*"))
+
+(defun ido-ignore-most-star-buffers (name)
+  (and
+   (string-match-p "^*" name)
+   (not (member name ido-dont-ignore-buffer-names))))
+
+(setq ido-ignore-buffers (list "\\` " #'ido-ignore-most-star-buffers))
+(kill-buffer "*Messages*")
+(kill-buffer "*Pymacs*")
+(kill-buffer "*scratch*")

@@ -3,7 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil nil ("org-wiki.el") (22668 49679 0 0))
+;;;### (autoloads nil nil ("org-wiki-pkg.el" "org-wiki.el") (22675
+;;;;;;  33987 0 0))
 
 ;;;***
 

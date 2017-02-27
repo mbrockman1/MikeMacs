@@ -1,0 +1,57 @@
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/auto-save-list
+/backups
+bookmarks
+/eshell
+
+*.last
+*.last~
+
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+projectile-bookmarks.eld
+recentf
+recentf~
+.projectile
+smex-items
+
+/tutorial/
+
+# directory configuration
+.dir-locals.el

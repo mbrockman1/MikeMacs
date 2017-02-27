@@ -1,5 +1,7 @@
 ((cython-mode status "installed" recipe
 	      (:name cython-mode :description "Major mode for the Cython language" :type http :url "https://raw.github.com/cython/cython/master/Tools/cython-mode.el" :features cython-mode :localname "cython-mode.el"))
+ (dash status "installed" recipe
+       (:name dash :description "A modern list api for Emacs. No 'cl required." :type github :pkgname "magnars/dash.el"))
  (el-get status "installed" recipe
 	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
 		("el-get.*\\.el$" "methods/")
@@ -22,6 +24,8 @@
 			  (feat feats)
 			(unload-feature feat t))))
 		  (require 'el-get))))
+ (epl status "installed" recipe
+      (:name epl :description "EPL provides a convenient high-level API for various package.el versions, and aims to overcome its most striking idiocies." :type github :pkgname "cask/epl"))
  (manage-minor-mode status "installed" recipe
 		    (:name manage-minor-mode :description "Manage your minor-mode on the dedicated interface buffer." :type github :pkgname "ShingoFukuyama/manage-minor-mode"))
  (org-mode status "installed" recipe
@@ -47,6 +51,11 @@
 	   (:name org-wiki :url "https://raw.githubusercontent.com/caiorss/org-wiki/master/org-wiki.el" :description "Emacs' desktop wiki built with org-mode" :features
 		  (org-wiki)
 		  :type http :after nil))
+ (pkg-info status "installed" recipe
+	   (:name pkg-info :description "Provide information about Emacs packages." :type github :pkgname "lunaryorn/pkg-info.el" :depends
+		  (dash epl)))
+ (py-autopep8 status "installed" recipe
+	      (:name py-autopep8 :description "Use autopep8 to beautify a Python buffer." :type github :pkgname "paetzke/py-autopep8.el"))
  (rope status "installed" recipe
        (:name rope :description "A python refactoring library" :post-init
 	      (el-get-envpath-prepend "PYTHONPATH" default-directory)
