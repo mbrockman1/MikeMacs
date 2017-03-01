@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- undo
- eshell
- shell
- package-menu-mark-upgrades
- list-packages
+ flycheck-mode
+ el-get-install
  package-install
- neotree
+ el-get-remove
+ el-get-list-packages
+ eshell
+ undo
 )
 
 ;; ----- smex-data -----
@@ -25,7 +25,7 @@
  (find-tag . 1)
  (find-file . 2)
  (floobits-join-workspace . 15)
- (package-install . 16)
+ (package-install . 18)
  (floobits-clear-highlights . 3)
  (py-autopep8 . 2)
  (floobits-leave-workspace . 4)
@@ -75,7 +75,7 @@
  (freex-meta-edit-tag-parents-in-minibuffer . 1)
  (mouse-major-mode-menu . 1)
  (describe-minor-mode-from-indicator . 1)
- (el-get-install . 5)
+ (el-get-install . 7)
  (manage-minor-mode . 1)
  (muse-mode . 1)
  (package-refresh-contents . 1)
@@ -91,6 +91,9 @@
  (inferior-python-mode . 4)
  (list-packages . 1)
  (package-menu-mark-upgrades . 1)
- (eshell . 5)
+ (eshell . 6)
  (undo . 1)
+ (el-get-list-packages . 1)
+ (el-get-remove . 3)
+ (flycheck-mode . 2)
 )

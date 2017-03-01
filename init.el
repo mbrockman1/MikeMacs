@@ -28,7 +28,7 @@
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 6))))
  '(package-selected-packages
    (quote
-    (ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode jedi better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
+    (exec-path-from-shell flycheck-pyflakes flycheck pep8 ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode jedi better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -47,11 +47,15 @@
 (show-paren-mode 1)
 
 (setq auto-save-file-name-transforms
-          `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+          `((".*" ,(concat user-emacs-directory "auto-save") t)))
 
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups"))
+            backup-by-copying t    ; Don't delink hardlinks
+            version-control t      ; Use version numbers on backups
+            delete-old-versions t  ; Automatically delete excess backups
+            kept-new-versions 20   ; how many of the newest versions to keep
+            kept-old-versions 20    ; and how many of the old
+            )
 
 (setq mac-option-modifier 'meta) ; set alt-key to meta
 (setq mac-escape-modifier nil) ; set esc-key to nil
@@ -62,6 +66,11 @@
 (load-theme 'zenburn t)
 
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+(global-flycheck-mode)
+(package-install 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
 
 (require 'smex)
 (smex-initialize)

@@ -1,4 +1,6 @@
-((cython-mode status "installed" recipe
+((autopep8 status "installed" recipe
+	   (:name autopep8 :description "autopep8 wrapper for emacs" :type http :url "https://gist.github.com/whirm/6122031/raw/28d0d47a95a9006b7fbb8d5ac5203577c52b9534/autopep8.el" :features autopep8))
+ (cython-mode status "installed" recipe
 	      (:name cython-mode :description "Major mode for the Cython language" :type http :url "https://raw.github.com/cython/cython/master/Tools/cython-mode.el" :features cython-mode :localname "cython-mode.el"))
  (dash status "installed" recipe
        (:name dash :description "A modern list api for Emacs. No 'cl required." :type github :pkgname "magnars/dash.el"))
@@ -26,6 +28,8 @@
 		  (require 'el-get))))
  (epl status "installed" recipe
       (:name epl :description "EPL provides a convenient high-level API for various package.el versions, and aims to overcome its most striking idiocies." :type github :pkgname "cask/epl"))
+ (let-alist status "installed" recipe
+	    (:name let-alist :description "Easily let-bind values of an assoc-list by their names." :builtin "25.0.50" :type elpa :url "https://elpa.gnu.org/packages/let-alist.html"))
  (manage-minor-mode status "installed" recipe
 		    (:name manage-minor-mode :description "Manage your minor-mode on the dedicated interface buffer." :type github :pkgname "ShingoFukuyama/manage-minor-mode"))
  (org-mode status "installed" recipe
@@ -77,4 +81,6 @@
 			(boundp 'pymacs-load-path)
 		      (setq pymacs-load-path nil))
 		    (add-to-list 'pymacs-load-path default-directory))
-		  :type git :url "https://github.com/python-rope/ropemode")))
+		  :type git :url "https://github.com/python-rope/ropemode"))
+ (seq status "installed" recipe
+      (:name seq :description "Sequence manipulation library for Emacs" :builtin "25" :type github :pkgname "NicolasPetton/seq.el")))
