@@ -1,4 +1,8 @@
-((autopep8 status "installed" recipe
+((auto-pair-plus status "installed" recipe
+		 (:name auto-pair-plus :description "Autopair handler to extend Autopair behavior." :type github :pkgname "emacsmirror/auto-pair-plus" :autoloads nil :depends autopair))
+ (autopair status "installed" recipe
+	   (:name autopair :website "https://github.com/capitaomorte/autopair" :description "Autopair is an extension to the Emacs text editor that automatically pairs braces and quotes." :type github :pkgname "capitaomorte/autopair" :features autopair))
+ (autopep8 status "installed" recipe
 	   (:name autopep8 :description "autopep8 wrapper for emacs" :type http :url "https://gist.github.com/whirm/6122031/raw/28d0d47a95a9006b7fbb8d5ac5203577c52b9534/autopep8.el" :features autopep8))
  (cython-mode status "installed" recipe
 	      (:name cython-mode :description "Major mode for the Cython language" :type http :url "https://raw.github.com/cython/cython/master/Tools/cython-mode.el" :features cython-mode :localname "cython-mode.el"))

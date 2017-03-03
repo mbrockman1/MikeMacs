@@ -28,7 +28,7 @@
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 6))))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell flycheck-pyflakes flycheck pep8 ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode jedi better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
+    (jedi exec-path-from-shell flycheck-pyflakes flycheck pep8 ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -74,6 +74,9 @@
 
 (require 'smex)
 (smex-initialize)
+
+(require 'autopair)
+(autopair-global-mode 1)
 
 (global-linum-mode t)
 (setq global-linum-mode t)
@@ -150,3 +153,12 @@
 (kill-buffer "*Messages*")
 (kill-buffer "*Pymacs*")
 (kill-buffer "*scratch*")
+
+
+;Jedi.el
+(require 'jedi)
+(autoload 'jedi:setup "jedi" nil t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+(setq jedi:key-show-doc (kbd "C-c d"))
+(ac-linum-workaround)
