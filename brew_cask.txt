@@ -1,0 +1,15 @@
+appcleaner
+applepi-baker
+atom
+caffeine
+calibre
+ccleaner
+eclipse-jee
+flux
+get-lyrical
+java
+keka
+limechat
+malwarebytes-anti-malware
+steam
+vlc

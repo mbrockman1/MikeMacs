@@ -36,8 +36,290 @@ See `autopair-mode' for more information on Autopair mode.
 
 ;;;***
 
+;;;### (autoloads nil "company-mode/company" "company-mode/company.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company.el
+
+(autoload 'company-mode "company-mode/company" "\
+\"complete anything\"; is an in-buffer completion framework.
+Completion starts automatically, depending on the values
+`company-idle-delay' and `company-minimum-prefix-length'.
+
+Completion can be controlled with the commands:
+`company-complete-common', `company-complete-selection', `company-complete',
+`company-select-next', `company-select-previous'.  If these commands are
+called before `company-idle-delay', completion will also start.
+
+Completions can be searched with `company-search-candidates' or
+`company-filter-candidates'.  These can be used while completion is
+inactive, as well.
+
+The completion data is retrieved using `company-backends' and displayed
+using `company-frontends'.  If you want to start a specific backend, call
+it interactively or use `company-begin-backend'.
+
+By default, the completions list is sorted alphabetically, unless the
+backend chooses otherwise, or `company-transformers' changes it later.
+
+regular keymap (`company-mode-map'):
+
+\\{company-mode-map}
+keymap during active completions (`company-active-map'):
+
+\\{company-active-map}
+
+\(fn &optional ARG)" t nil)
+
+(defvar global-company-mode nil "\
+Non-nil if Global Company mode is enabled.
+See the `global-company-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-company-mode'.")
+
+(custom-autoload 'global-company-mode "company-mode/company" nil)
+
+(autoload 'global-company-mode "company-mode/company" "\
+Toggle Company mode in all buffers.
+With prefix ARG, enable Global Company mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Company mode is enabled in all buffers where
+`company-mode-on' would do it.
+See `company-mode' for more information on Company mode.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'company-manual-begin "company-mode/company" "\
+
+
+\(fn)" t nil)
+
+(autoload 'company-complete "company-mode/company" "\
+Insert the common part of all candidates or the current selection.
+The first time this is called, the common part is inserted, the second
+time, or when the selection has been changed, the selected candidate is
+inserted.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-abbrev" "company-mode/company-abbrev.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-abbrev.el
+
+(autoload 'company-abbrev "company-mode/company-abbrev" "\
+`company-mode' completion backend for abbrev.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-bbdb" "company-mode/company-bbdb.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-bbdb.el
+
+(autoload 'company-bbdb "company-mode/company-bbdb" "\
+`company-mode' completion backend for BBDB.
+
+\(fn COMMAND &optional ARG &rest IGNORE)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-css" "company-mode/company-css.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-css.el
+
+(autoload 'company-css "company-mode/company-css" "\
+`company-mode' completion backend for `css-mode'.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-dabbrev" "company-mode/company-dabbrev.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-dabbrev.el
+
+(autoload 'company-dabbrev "company-mode/company-dabbrev" "\
+dabbrev-like `company-mode' completion backend.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-dabbrev-code" "company-mode/company-dabbrev-code.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-dabbrev-code.el
+
+(autoload 'company-dabbrev-code "company-mode/company-dabbrev-code" "\
+dabbrev-like `company-mode' backend for code.
+The backend looks for all symbols in the current buffer that aren't in
+comments or strings.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-elisp" "company-mode/company-elisp.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-elisp.el
+
+(autoload 'company-elisp "company-mode/company-elisp" "\
+`company-mode' completion backend for Emacs Lisp.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-etags" "company-mode/company-etags.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-etags.el
+
+(autoload 'company-etags "company-mode/company-etags" "\
+`company-mode' completion backend for etags.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-files" "company-mode/company-files.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-files.el
+
+(autoload 'company-files "company-mode/company-files" "\
+`company-mode' completion backend existing file names.
+Completions works for proper absolute and relative files paths.
+File paths with spaces are only supported inside strings.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-gtags" "company-mode/company-gtags.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-gtags.el
+
+(autoload 'company-gtags "company-mode/company-gtags" "\
+`company-mode' completion backend for GNU Global.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-ispell" "company-mode/company-ispell.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-ispell.el
+
+(autoload 'company-ispell "company-mode/company-ispell" "\
+`company-mode' completion backend using Ispell.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-keywords" "company-mode/company-keywords.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-keywords.el
+
+(autoload 'company-keywords "company-mode/company-keywords" "\
+`company-mode' backend for programming language keywords.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-nxml" "company-mode/company-nxml.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-nxml.el
+
+(autoload 'company-nxml "company-mode/company-nxml" "\
+`company-mode' completion backend for `nxml-mode'.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-oddmuse" "company-mode/company-oddmuse.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-oddmuse.el
+
+(autoload 'company-oddmuse "company-mode/company-oddmuse" "\
+`company-mode' completion backend for `oddmuse-mode'.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-semantic" "company-mode/company-semantic.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-semantic.el
+
+(autoload 'company-semantic "company-mode/company-semantic" "\
+`company-mode' completion backend using CEDET Semantic.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-tempo" "company-mode/company-tempo.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-tempo.el
+
+(autoload 'company-tempo "company-mode/company-tempo" "\
+`company-mode' completion backend for tempo.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-xcode" "company-mode/company-xcode.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-xcode.el
+
+(autoload 'company-xcode "company-mode/company-xcode" "\
+`company-mode' completion backend for Xcode projects.
+
+\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "company-mode/company-yasnippet" "company-mode/company-yasnippet.el"
+;;;;;;  (22721 17531 0 0))
+;;; Generated autoloads from company-mode/company-yasnippet.el
+
+(autoload 'company-yasnippet "company-mode/company-yasnippet" "\
+`company-mode' backend for `yasnippet'.
+
+This backend should be used with care, because as long as there are
+snippets defined for the current major mode, this backend will always
+shadow backends that come after it.  Recommended usages:
+
+* In a buffer-local value of `company-backends', grouped with a backend or
+  several that provide actual text completions.
+
+  (add-hook 'js-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   '((company-dabbrev-code company-yasnippet)))))
+
+* After keyword `:with', grouped with other backends.
+
+  (push '(company-semantic :with company-yasnippet) company-backends)
+
+* Not in `company-backends', just bound to a key.
+
+  (global-set-key (kbd \"C-c y\") 'company-yasnippet)
+
+\(fn COMMAND &optional ARG &rest IGNORE)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil "cython-mode/cython-mode" "cython-mode/cython-mode.el"
-;;;;;;  (22673 15579 0 0))
+;;;;;;  (22717 44957 0 0))
 ;;; Generated autoloads from cython-mode/cython-mode.el
 
 (add-to-list 'auto-mode-alist '("\\.pyx\\'" . cython-mode))
@@ -245,6 +527,219 @@ object or a file path.
 Display a list of packages.
 
 \(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "find-file-in-project/find-file-in-project"
+;;;;;;  "find-file-in-project/find-file-in-project.el" (22721 17536
+;;;;;;  0 0))
+;;; Generated autoloads from find-file-in-project/find-file-in-project.el
+
+(autoload 'ffip-diff-backend-git-show-commit "find-file-in-project/find-file-in-project" "\
+
+
+\(fn)" nil nil)
+
+(autoload 'ffip-diff-backend-hg-show-commit "find-file-in-project/find-file-in-project" "\
+
+
+\(fn)" nil nil)
+
+(autoload 'ffip-copy-without-change "find-file-in-project/find-file-in-project" "\
+
+
+\(fn P)" nil nil)
+
+(autoload 'ffip-copy-reactjs-import "find-file-in-project/find-file-in-project" "\
+
+
+\(fn P)" nil nil)
+
+(autoload 'ffip-copy-org-file-link "find-file-in-project/find-file-in-project" "\
+
+
+\(fn P)" nil nil)
+
+(defvar ffip-find-relative-path-callback 'ffip-copy-without-change)
+
+(autoload 'ffip-project-root "find-file-in-project/find-file-in-project" "\
+Return the root of the project.
+
+\(fn)" nil nil)
+
+(autoload 'ffip-save-ivy-last "find-file-in-project/find-file-in-project" "\
+Save `ivy-last' into `ffip-ivy-last-saved'.  Requires `ivy-mode'.
+
+\(fn)" t nil)
+
+(autoload 'ffip-get-project-root-directory "find-file-in-project/find-file-in-project" "\
+Get the full path of project root directory.
+
+\(fn)" nil nil)
+
+(autoload 'ffip-ivy-resume "find-file-in-project/find-file-in-project" "\
+Wrapper of `ivy-resume'.  Resume the search saved at `ffip-ivy-last-saved'.
+
+\(fn)" t nil)
+
+(autoload 'ffip-filename-identity "find-file-in-project/find-file-in-project" "\
+Return identical KEYWORD.
+
+\(fn KEYWORD)" nil nil)
+
+(autoload 'ffip-filename-camelcase-to-dashes "find-file-in-project/find-file-in-project" "\
+Convert KEYWORD from camel cased to dash seperated.
+If CHECK-ONLY is true, only do the check.
+
+\(fn KEYWORD &optional CHECK-ONLY)" nil nil)
+
+(autoload 'ffip-filename-dashes-to-camelcase "find-file-in-project/find-file-in-project" "\
+Convert KEYWORD from dash seperated to camel cased.
+If CHECK-ONLY is true, only do the check.
+
+\(fn KEYWORD &optional CHECK-ONLY)" nil nil)
+
+(autoload 'ffip-completing-read "find-file-in-project/find-file-in-project" "\
+
+
+\(fn PROMPT COLLECTION ACTION)" nil nil)
+
+(autoload 'ffip-project-search "find-file-in-project/find-file-in-project" "\
+Return an alist of all filenames in the project and their path.
+
+Files with duplicate filenames are suffixed with the name of the
+directory they are found in so that they are unique.
+
+If KEYWORD is string, it's the file name or file path to find file.
+If KEYWORD is list, it's the list of file names.
+
+\(fn KEYWORD FIND-DIRECTORY)" nil nil)
+
+(autoload 'ffip-find-files "find-file-in-project/find-file-in-project" "\
+The API to find files.
+
+\(fn KEYWORD OPEN-ANOTHER-WINDOW &optional FIND-DIRECTORY FN)" nil nil)
+
+(autoload 'ffip-create-project-file "find-file-in-project/find-file-in-project" "\
+Create or Append .dir-locals.el to set up per directory.
+You can move .dir-locals.el to root directory.
+See (info \"(Emacs) Directory Variables\") for details.
+
+\(fn)" t nil)
+
+(autoload 'ffip-current-full-filename-match-pattern-p "find-file-in-project/find-file-in-project" "\
+Is current full file name (including directory) match the REGEX?
+
+\(fn REGEX)" nil nil)
+
+(autoload 'find-file-in-project "find-file-in-project/find-file-in-project" "\
+Prompt with a completing list of all files in the project to find one.
+
+If OPEN-ANOTHER-WINDOW is not nil, the file will be opened in new window.
+
+The project's scope is defined as the first directory containing
+a `ffip-project-file' whose value is \".git\" by default.
+
+You can override this by setting the variable `ffip-project-root'.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
+(autoload 'find-file-in-current-directory "find-file-in-project/find-file-in-project" "\
+Like `find-file-in-project'.  But search only in current directory.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
+(autoload 'find-file-in-project-by-selected "find-file-in-project/find-file-in-project" "\
+Similar to `find-file-in-project'.
+But use string from selected region to search files in the project.
+If no region is selected, you need provide keyword.
+
+Keyword could be ANY part of the file's full path and support wildcard.
+For example, to find /home/john/proj1/test.js, below keywords are valid:
+- test.js
+- roj1/tes
+- john*test
+
+If keyword contains line number like \"hello.txt:32\" or \"hello.txt:32:\",
+we will move to that line in opened file.
+
+If OPEN-ANOTHER-WINDOW is not nil, the file will be opened in new window.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
+(autoload 'find-file-in-current-directory-by-selected "find-file-in-project/find-file-in-project" "\
+Like `find-file-in-project-by-selected'.  But search only in current directory.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
+(autoload 'find-relative-path "find-file-in-project/find-file-in-project" "\
+Find file/directory and copy its relative path into `kill-ring'.
+Optional prefix FIND-DIRECTORY copy the directory path; file path by default.
+
+You can set `ffip-find-relative-path-callback' to format the string before copying,
+  (setq ffip-find-relative-path-callback 'ffip-copy-reactjs-import)
+  (setq ffip-find-relative-path-callback 'ffip-copy-org-file-link)
+
+\(fn &optional FIND-DIRECTORY)" t nil)
+
+(autoload 'find-directory-in-project-by-selected "find-file-in-project/find-file-in-project" "\
+Similar to `find-file-in-project-by-selected'.
+Use string from selected region to find directory in the project.
+If no region is selected, you need provide keyword.
+
+Keyword could be directory's base-name only or parent-directoy+base-name
+For example, to find /home/john/proj1/test, below keywords are valid:
+- test
+- roj1/test
+- john*test
+
+If OPEN-ANOTHER-WINDOW is not nil, the file will be opened in new window.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
+(defalias 'ffip 'find-file-in-project)
+
+(autoload 'ffip-diff-quit "find-file-in-project/find-file-in-project" "\
+
+
+\(fn)" t nil)
+
+(autoload 'ffip-diff-find-file "find-file-in-project/find-file-in-project" "\
+File file(s) in current hunk.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
+(autoload 'ffip-show-diff "find-file-in-project/find-file-in-project" "\
+Show the diff output by excuting selected `ffip-diff-backends'.
+NUM is the index selected backend from `ffip-diff-backends'.
+NUM is zero based.  Its default value is zero.
+
+\(fn &optional NUM)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "highlight-indentation/highlight-indentation"
+;;;;;;  "highlight-indentation/highlight-indentation.el" (22721 17537
+;;;;;;  0 0))
+;;; Generated autoloads from highlight-indentation/highlight-indentation.el
+
+(autoload 'highlight-indentation-mode "highlight-indentation/highlight-indentation" "\
+Highlight indentation minor mode highlights indentation based on spaces
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'highlight-indentation-set-offset "highlight-indentation/highlight-indentation" "\
+Set indentation offset localy in buffer, will prevent
+highlight-indentation from trying to guess indentation offset
+from major mode
+
+\(fn OFFSET)" t nil)
+
+(autoload 'highlight-indentation-current-column-mode "highlight-indentation/highlight-indentation" "\
+Hilight Indentation minor mode displays a vertical bar
+corresponding to the indentation of the current line
+
+\(fn &optional ARG)" t nil)
 
 ;;;***
 
@@ -978,7 +1473,7 @@ Return output file name.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/contrib/lisp/ox-taskjuggler" "org-mode/contrib/lisp/ox-taskjuggler.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/contrib/lisp/ox-taskjuggler.el
 
 (autoload 'org-taskjuggler-export "org-mode/contrib/lisp/ox-taskjuggler" "\
@@ -1065,7 +1560,7 @@ the reports is done using the TaskJuggler GUI.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org" "org-mode/lisp/org.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org.el
 
 (autoload 'org-babel-do-load-languages "org-mode/lisp/org" "\
@@ -1288,7 +1783,7 @@ Call the customize function with org as argument.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-agenda" "org-mode/lisp/org-agenda.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-agenda.el
 
 (autoload 'org-toggle-sticky-agenda "org-mode/lisp/org-agenda" "\
@@ -1561,7 +2056,7 @@ to override `appt-message-warning-time'.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-capture" "org-mode/lisp/org-capture.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-capture.el
 
 (autoload 'org-capture-string "org-mode/lisp/org-capture" "\
@@ -1605,7 +2100,7 @@ Set `org-capture-templates' to be similar to `org-remember-templates'.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-colview" "org-mode/lisp/org-colview.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-colview.el
 
 (autoload 'org-columns-remove-overlays "org-mode/lisp/org-colview" "\
@@ -1674,7 +2169,7 @@ Turn on or update column view in the agenda.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-compat" "org-mode/lisp/org-compat.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-compat.el
 
 (autoload 'org-check-version "org-mode/lisp/org-compat" "\
@@ -1684,8 +2179,62 @@ Try very hard to provide sensible version strings.
 
 ;;;***
 
+;;;### (autoloads nil "org-mode/lisp/org-duration" "org-mode/lisp/org-duration.el"
+;;;;;;  (22717 44951 0 0))
+;;; Generated autoloads from org-mode/lisp/org-duration.el
+
+(autoload 'org-duration-set-regexps "org-mode/lisp/org-duration" "\
+Set duration related regexps.
+
+\(fn)" t nil)
+
+(autoload 'org-duration-p "org-mode/lisp/org-duration" "\
+Non-nil when string S is a time duration.
+
+\(fn S)" nil nil)
+
+(autoload 'org-duration-to-minutes "org-mode/lisp/org-duration" "\
+Return number of minutes of DURATION string.
+
+When optional argument CANONICAL is non-nil, ignore
+`org-duration-units' and use standard time units value.
+
+As a special case, a bare number represents minutes.
+
+Return value as a float.  Raise an error if duration format is
+not recognized.
+
+\(fn DURATION &optional CANONICAL)" nil nil)
+
+(autoload 'org-duration-from-minutes "org-mode/lisp/org-duration" "\
+Return duration string for a given number of MINUTES.
+
+Format duration according to `org-duration-format' or FMT, when
+non-nil.
+
+When optional argument CANONICAL is non-nil, ignore
+`org-duration-units' and use standard time units value.
+
+Raise an error if expected format is unknown.
+
+\(fn MINUTES &optional FMT CANONICAL)" nil nil)
+
+(autoload 'org-duration-h:mm-only-p "org-mode/lisp/org-duration" "\
+Non-nil when every duration in TIMES has \"H:MM\" or \"H:MM:SS\" format.
+
+TIMES is a list of duration strings.
+
+Return nil if any duration is expressed with units, as defined in
+`org-duration-units'.  Otherwise, if any duration is expressed
+with \"H:MM:SS\" format, return `h:mm:ss'.  Otherwise, return
+`h:mm'.
+
+\(fn TIMES)" nil nil)
+
+;;;***
+
 ;;;### (autoloads nil "org-mode/lisp/org-lint" "org-mode/lisp/org-lint.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-lint.el
 
 (autoload 'org-lint "org-mode/lisp/org-lint" "\
@@ -1713,7 +2262,7 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-version" "org-mode/lisp/org-version.el"
-;;;;;;  (22667 39906 0 0))
+;;;;;;  (22717 44951 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-version.el
 
 (autoload 'org-release "org-mode/lisp/org-version" "\
@@ -1865,13 +2414,206 @@ Pre-save hook to be used before running autopep8.
 
 ;;;***
 
+;;;### (autoloads nil "pyvenv/pyvenv" "pyvenv/pyvenv.el" (22721 17538
+;;;;;;  0 0))
+;;; Generated autoloads from pyvenv/pyvenv.el
+
+(autoload 'pyvenv-activate "pyvenv/pyvenv" "\
+Activate the virtual environment in DIRECTORY.
+
+\(fn DIRECTORY)" t nil)
+
+(autoload 'pyvenv-deactivate "pyvenv/pyvenv" "\
+Deactivate any current virtual environment.
+
+\(fn)" t nil)
+
+(autoload 'pyvenv-workon "pyvenv/pyvenv" "\
+Activate a virtual environment from $WORKON_HOME.
+
+\(fn NAME)" t nil)
+
+(defvar pyvenv-mode nil "\
+Non-nil if Pyvenv mode is enabled.
+See the `pyvenv-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `pyvenv-mode'.")
+
+(custom-autoload 'pyvenv-mode "pyvenv/pyvenv" nil)
+
+(autoload 'pyvenv-mode "pyvenv/pyvenv" "\
+Global minor mode for pyvenv.
+
+Will show the current virtualenv in the mode line, and respect a
+`pyvenv-workon' setting in files.
+
+\(fn &optional ARG)" t nil)
+
+(defvar pyvenv-tracking-mode nil "\
+Non-nil if Pyvenv-Tracking mode is enabled.
+See the `pyvenv-tracking-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `pyvenv-tracking-mode'.")
+
+(custom-autoload 'pyvenv-tracking-mode "pyvenv/pyvenv" nil)
+
+(autoload 'pyvenv-tracking-mode "pyvenv/pyvenv" "\
+Global minor mode to track the current virtualenv.
+
+When this mode is active, pyvenv will activate a buffer-specific
+virtualenv whenever the user switches to a buffer with a
+buffer-local `pyvenv-workon' or `pyvenv-activate' variable.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'pyvenv-restart-python "pyvenv/pyvenv" "\
+Restart Python inferior processes.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "virtualenvwrapper/virtualenvwrapper" "virtualenvwrapper/virtualenvwrapper.el"
+;;;;;;  (22713 45267 0 0))
+;;; Generated autoloads from virtualenvwrapper/virtualenvwrapper.el
+
+(autoload 'venv-deactivate "virtualenvwrapper/virtualenvwrapper" "\
+Deactivate the current venv.
+
+\(fn)" t nil)
+
+(autoload 'venv-set-location "virtualenvwrapper/virtualenvwrapper" "\
+Set where to look for virtual environments to LOCATION.
+This is useful e.g. when using tox.
+
+\(fn &optional LOCATION)" t nil)
+
+(autoload 'venv-workon "virtualenvwrapper/virtualenvwrapper" "\
+Interactively switch to virtualenv NAME. Prompts for name if called
+interactively.
+
+\(fn &optional NAME)" t nil)
+
+(autoload 'venv-mkvirtualenv "virtualenvwrapper/virtualenvwrapper" "\
+Create new virtualenvs NAMES. If venv-location is a single
+directory, the new virtualenvs are made there; if it is a list of
+directories, the new virtualenvs are made in the current
+default-directory.
+
+\(fn &rest NAMES)" t nil)
+
+(autoload 'venv-rmvirtualenv "virtualenvwrapper/virtualenvwrapper" "\
+Delete virtualenvs NAMES.
+
+\(fn &rest NAMES)" t nil)
+
+(autoload 'venv-lsvirtualenv "virtualenvwrapper/virtualenvwrapper" "\
+List all available virtualenvs in a temp buffer.
+
+\(fn)" t nil)
+
+(autoload 'venv-cdvirtualenv "virtualenvwrapper/virtualenvwrapper" "\
+Change to the directory of current virtualenv. If
+SUBDIR is passed, append that to the path such that
+we are immediately in that directory.
+
+\(fn &optional SUBDIR)" t nil)
+
+(autoload 'venv-cpvirtualenv "virtualenvwrapper/virtualenvwrapper" "\
+Copy virtualenv NAME to NEWNAME. Any arguments not passed will be
+prompted for This comes with the same caveat as cpvirtualenv in the
+original virtualenvwrapper, which is that is far from guarenteed to
+work well. Many packages hardcode absolute paths in various places an
+will break if moved to a new location. Use with caution. If used with
+a single virtualenv directory, behaves just like cpvirtualenv in
+virtualenvwrapper.sh.  If used with virtualenvs spread around the
+filesystem, creates the new virtualenv in the current default
+directory.
+
+\(fn &optional NAME NEWNAME)" t nil)
+
+(autoload 'venv-shell-init "virtualenvwrapper/virtualenvwrapper" "\
+Activate the current virtualenv in a newly opened shell.
+
+\(fn PROCESS)" nil nil)
+
+(autoload 'venv-initialize-interactive-shells "virtualenvwrapper/virtualenvwrapper" "\
+Configure interactive shells for use with
+virtualenvwrapper.el.
+
+\(fn)" nil nil)
+
+(autoload 'venv-initialize-eshell "virtualenvwrapper/virtualenvwrapper" "\
+Configure eshell for use with virtualenvwrapper.el.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "yasnippet/yasnippet" "yasnippet/yasnippet.el"
+;;;;;;  (22721 17540 0 0))
+;;; Generated autoloads from yasnippet/yasnippet.el
+
+(autoload 'yas-minor-mode "yasnippet/yasnippet" "\
+Toggle YASnippet mode.
+
+When YASnippet mode is enabled, `yas-expand', normally bound to
+the TAB key, expands snippets of code depending on the major
+mode.
+
+With no argument, this command toggles the mode.
+positive prefix argument turns on the mode.
+Negative prefix argument turns off the mode.
+
+Key bindings:
+\\{yas-minor-mode-map}
+
+\(fn &optional ARG)" t nil)
+
+(defvar yas-global-mode nil "\
+Non-nil if Yas-Global mode is enabled.
+See the `yas-global-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `yas-global-mode'.")
+
+(custom-autoload 'yas-global-mode "yasnippet/yasnippet" nil)
+
+(autoload 'yas-global-mode "yasnippet/yasnippet" "\
+Toggle Yas minor mode in all buffers.
+With prefix ARG, enable Yas-Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Yas minor mode is enabled in all buffers where
+`yas-minor-mode-on' would do it.
+See `yas-minor-mode' for more information on Yas minor mode.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'snippet-mode "yasnippet/yasnippet" "\
+A mode for editing yasnippets
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil nil ("autopair/autopair-tests.el" "autopep8/autopep8.el"
+;;;;;;  "company-mode/company-capf.el" "company-mode/company-clang.el"
+;;;;;;  "company-mode/company-cmake.el" "company-mode/company-eclim.el"
+;;;;;;  "company-mode/company-template.el" "company-mode/company-tests.el"
 ;;;;;;  "dash/dash-functional.el" "dash/dash.el" "el-get/el-get-autoloading.el"
 ;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "epl/epl.el"
-;;;;;;  "org-mode/contrib/lisp/ob-csharp.el" "org-mode/contrib/lisp/ob-eukleides.el"
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "elpy/elpy-django.el"
+;;;;;;  "elpy/elpy-pkg.el" "elpy/elpy-profile.el" "elpy/elpy-refactor.el"
+;;;;;;  "epl/epl.el" "org-mode/contrib/lisp/ob-csharp.el" "org-mode/contrib/lisp/ob-eukleides.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-fomus.el" "org-mode/contrib/lisp/ob-julia.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-mathematica.el" "org-mode/contrib/lisp/ob-mathomatic.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-oz.el" "org-mode/contrib/lisp/ob-stata.el"
@@ -1887,19 +2629,19 @@ Pre-save hook to be used before running autopep8.
 ;;;;;;  "org-mode/contrib/lisp/org-invoice.el" "org-mode/contrib/lisp/org-learn.el"
 ;;;;;;  "org-mode/contrib/lisp/org-license.el" "org-mode/contrib/lisp/org-mac-iCal.el"
 ;;;;;;  "org-mode/contrib/lisp/org-mairix.el" "org-mode/contrib/lisp/org-man.el"
-;;;;;;  "org-mode/contrib/lisp/org-mew.el" "org-mode/contrib/lisp/org-mime.el"
-;;;;;;  "org-mode/contrib/lisp/org-notify.el" "org-mode/contrib/lisp/org-notmuch.el"
-;;;;;;  "org-mode/contrib/lisp/org-panel.el" "org-mode/contrib/lisp/org-screen.el"
-;;;;;;  "org-mode/contrib/lisp/org-secretary.el" "org-mode/contrib/lisp/org-static-mathjax.el"
-;;;;;;  "org-mode/contrib/lisp/org-sudoku.el" "org-mode/contrib/lisp/org-velocity.el"
-;;;;;;  "org-mode/contrib/lisp/org-vm.el" "org-mode/contrib/lisp/org-wikinodes.el"
-;;;;;;  "org-mode/contrib/lisp/org-wl.el" "org-mode/contrib/lisp/orgtbl-sqlinsert.el"
-;;;;;;  "org-mode/contrib/lisp/ox-bibtex.el" "org-mode/contrib/lisp/ox-confluence.el"
-;;;;;;  "org-mode/contrib/lisp/ox-deck.el" "org-mode/contrib/lisp/ox-extra.el"
-;;;;;;  "org-mode/contrib/lisp/ox-groff.el" "org-mode/contrib/lisp/ox-s5.el"
-;;;;;;  "org-mode/lisp/ob-C.el" "org-mode/lisp/ob-J.el" "org-mode/lisp/ob-R.el"
-;;;;;;  "org-mode/lisp/ob-abc.el" "org-mode/lisp/ob-asymptote.el"
-;;;;;;  "org-mode/lisp/ob-awk.el" "org-mode/lisp/ob-calc.el" "org-mode/lisp/ob-clojure.el"
+;;;;;;  "org-mode/contrib/lisp/org-mew.el" "org-mode/contrib/lisp/org-notify.el"
+;;;;;;  "org-mode/contrib/lisp/org-notmuch.el" "org-mode/contrib/lisp/org-panel.el"
+;;;;;;  "org-mode/contrib/lisp/org-screen.el" "org-mode/contrib/lisp/org-secretary.el"
+;;;;;;  "org-mode/contrib/lisp/org-static-mathjax.el" "org-mode/contrib/lisp/org-sudoku.el"
+;;;;;;  "org-mode/contrib/lisp/org-velocity.el" "org-mode/contrib/lisp/org-vm.el"
+;;;;;;  "org-mode/contrib/lisp/org-wikinodes.el" "org-mode/contrib/lisp/org-wl.el"
+;;;;;;  "org-mode/contrib/lisp/orgtbl-sqlinsert.el" "org-mode/contrib/lisp/ox-bibtex.el"
+;;;;;;  "org-mode/contrib/lisp/ox-confluence.el" "org-mode/contrib/lisp/ox-deck.el"
+;;;;;;  "org-mode/contrib/lisp/ox-extra.el" "org-mode/contrib/lisp/ox-groff.el"
+;;;;;;  "org-mode/contrib/lisp/ox-s5.el" "org-mode/lisp/ob-C.el"
+;;;;;;  "org-mode/lisp/ob-J.el" "org-mode/lisp/ob-R.el" "org-mode/lisp/ob-abc.el"
+;;;;;;  "org-mode/lisp/ob-asymptote.el" "org-mode/lisp/ob-awk.el"
+;;;;;;  "org-mode/lisp/ob-calc.el" "org-mode/lisp/ob-clojure.el"
 ;;;;;;  "org-mode/lisp/ob-comint.el" "org-mode/lisp/ob-coq.el" "org-mode/lisp/ob-core.el"
 ;;;;;;  "org-mode/lisp/ob-css.el" "org-mode/lisp/ob-ditaa.el" "org-mode/lisp/ob-dot.el"
 ;;;;;;  "org-mode/lisp/ob-ebnf.el" "org-mode/lisp/ob-emacs-lisp.el"
@@ -1940,8 +2682,9 @@ Pre-save hook to be used before running autopep8.
 ;;;;;;  "org-mode/lisp/ox-beamer.el" "org-mode/lisp/ox-html.el" "org-mode/lisp/ox-icalendar.el"
 ;;;;;;  "org-mode/lisp/ox-latex.el" "org-mode/lisp/ox-man.el" "org-mode/lisp/ox-md.el"
 ;;;;;;  "org-mode/lisp/ox-odt.el" "org-mode/lisp/ox-org.el" "org-mode/lisp/ox-publish.el"
-;;;;;;  "org-mode/lisp/ox-texinfo.el" "org-mode/lisp/ox.el") (22711
-;;;;;;  11455 0 0))
+;;;;;;  "org-mode/lisp/ox-texinfo.el" "org-mode/lisp/ox.el" "s/s.el"
+;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
+;;;;;;  (22721 17543 0 0))
 
 ;;;***
 

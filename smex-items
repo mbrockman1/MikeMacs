@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- undo
- goto-line
  eshell
- list-flycheck-errors
- flycheck-buffer
- python-mode
- flycheck-mode
+ py-autopep8
+ list-packages
+ undo
+ replace-string
+ undo-tree-redo
+ shell
 )
 
 ;; ----- smex-data -----
@@ -25,9 +25,9 @@
  (find-tag . 1)
  (find-file . 2)
  (floobits-join-workspace . 15)
- (package-install . 16)
+ (package-install . 17)
  (floobits-clear-highlights . 3)
- (py-autopep8 . 2)
+ (py-autopep8 . 3)
  (floobits-leave-workspace . 4)
  (floobits-debug-output . 1)
  (eww-open-file . 2)
@@ -36,7 +36,7 @@
  (quit-window . 7)
  (package-list-packages . 1)
  (buffer-menu . 4)
- (undo-tree-redo . 10)
+ (undo-tree-redo . 11)
  (mark-page . 2)
  (simpleclip-copy . 2)
  (simpleclip-paste . 2)
@@ -50,7 +50,7 @@
  (elscreen-start . 1)
  (pymacs-load . 2)
  (pymacs-eval . 1)
- (freex-mode . 4)
+ (freex-mode . 5)
  (eval-buffer . 9)
  (org-wiki-index . 8)
  (org-wiki-helm . 9)
@@ -75,7 +75,7 @@
  (freex-meta-edit-tag-parents-in-minibuffer . 1)
  (mouse-major-mode-menu . 1)
  (describe-minor-mode-from-indicator . 1)
- (el-get-install . 5)
+ (el-get-install . 6)
  (manage-minor-mode . 1)
  (muse-mode . 1)
  (package-refresh-contents . 1)
@@ -89,14 +89,20 @@
  (org-wiki-insert . 2)
  (neotree . 1)
  (inferior-python-mode . 4)
- (list-packages . 1)
+ (list-packages . 3)
  (package-menu-mark-upgrades . 1)
- (eshell . 8)
- (undo . 4)
+ (eshell . 13)
+ (undo . 11)
  (next-error . 1)
  (flycheck-error-list-mode . 2)
  (flycheck-buffer . 2)
  (flycheck-mode . 1)
  (list-flycheck-errors . 1)
  (goto-line . 1)
+ (jedi:install-server . 1)
+ (jedi-mode . 2)
+ (yank . 1)
+ (el-get-update . 1)
+ (el-get-update-all . 1)
+ (replace-string . 1)
 )

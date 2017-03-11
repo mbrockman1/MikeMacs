@@ -4,6 +4,8 @@
 	   (:name autopair :website "https://github.com/capitaomorte/autopair" :description "Autopair is an extension to the Emacs text editor that automatically pairs braces and quotes." :type github :pkgname "capitaomorte/autopair" :features autopair))
  (autopep8 status "installed" recipe
 	   (:name autopep8 :description "autopep8 wrapper for emacs" :type http :url "https://gist.github.com/whirm/6122031/raw/28d0d47a95a9006b7fbb8d5ac5203577c52b9534/autopep8.el" :features autopep8))
+ (company-mode status "installed" recipe
+	       (:name company-mode :website "http://company-mode.github.io/" :description "Modular in-buffer completion framework for Emacs" :type github :pkgname "company-mode/company-mode"))
  (cython-mode status "installed" recipe
 	      (:name cython-mode :description "Major mode for the Cython language" :type http :url "https://raw.github.com/cython/cython/master/Tools/cython-mode.el" :features cython-mode :localname "cython-mode.el"))
  (dash status "installed" recipe
@@ -32,6 +34,10 @@
 		  (require 'el-get))))
  (epl status "installed" recipe
       (:name epl :description "EPL provides a convenient high-level API for various package.el versions, and aims to overcome its most striking idiocies." :type github :pkgname "cask/epl"))
+ (find-file-in-project status "installed" recipe
+		       (:name find-file-in-project :type github :pkgname "technomancy/find-file-in-project" :description "Quick access to project files in Emacs"))
+ (highlight-indentation status "installed" recipe
+			(:name highlight-indentation :description "Function for highlighting indentation" :type git :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"))
  (let-alist status "installed" recipe
 	    (:name let-alist :description "Easily let-bind values of an assoc-list by their names." :builtin "25.0.50" :type elpa :url "https://elpa.gnu.org/packages/let-alist.html"))
  (manage-minor-mode status "installed" recipe
@@ -64,6 +70,9 @@
 		  (dash epl)))
  (py-autopep8 status "installed" recipe
 	      (:name py-autopep8 :description "Use autopep8 to beautify a Python buffer." :type github :pkgname "paetzke/py-autopep8.el"))
+ (pyvenv status "installed" recipe
+	 (:name pyvenv :website "https://github.com/jorgenschaefer/pyvenv" :description "Python virtual environment interface for Emacs" :type github :pkgname "jorgenschaefer/pyvenv" :post-init
+		(el-get-envpath-prepend "PYTHONPATH" default-directory)))
  (rope status "installed" recipe
        (:name rope :description "A python refactoring library" :post-init
 	      (el-get-envpath-prepend "PYTHONPATH" default-directory)
@@ -86,5 +95,13 @@
 		      (setq pymacs-load-path nil))
 		    (add-to-list 'pymacs-load-path default-directory))
 		  :type git :url "https://github.com/python-rope/ropemode"))
+ (s status "installed" recipe
+    (:name s :description "The long lost Emacs string manipulation library." :type github :pkgname "magnars/s.el"))
  (seq status "installed" recipe
-      (:name seq :description "Sequence manipulation library for Emacs" :builtin "25" :type github :pkgname "NicolasPetton/seq.el")))
+      (:name seq :description "Sequence manipulation library for Emacs" :builtin "25" :type github :pkgname "NicolasPetton/seq.el"))
+ (virtualenvwrapper status "installed" recipe
+		    (:name virtualenvwrapper :type github :website "https://github.com/porterjamesj/virtualenvwrapper.el" :description "virtualenv tool for emacs" :pkgname "porterjamesj/virtualenvwrapper.el" :depends
+			   (dash s)))
+ (yasnippet status "installed" recipe
+	    (:name yasnippet :website "https://github.com/capitaomorte/yasnippet.git" :description "YASnippet is a template system for Emacs." :type github :pkgname "capitaomorte/yasnippet" :compile "yasnippet.el" :submodule nil :build
+		   (("git" "submodule" "update" "--init" "--" "snippets")))))
