@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- eshell
- py-autopep8
- list-packages
+ auto-package-update-now
+ el-get-self-update
  undo
- replace-string
- undo-tree-redo
- shell
+ eshell
+ delete-file
+ elpy-mode
+ py-autopep8
 )
 
 ;; ----- smex-data -----
@@ -91,8 +91,8 @@
  (inferior-python-mode . 4)
  (list-packages . 3)
  (package-menu-mark-upgrades . 1)
- (eshell . 13)
- (undo . 11)
+ (eshell . 16)
+ (undo . 24)
  (next-error . 1)
  (flycheck-error-list-mode . 2)
  (flycheck-buffer . 2)
@@ -105,4 +105,8 @@
  (el-get-update . 1)
  (el-get-update-all . 1)
  (replace-string . 1)
+ (elpy-mode . 2)
+ (delete-file . 1)
+ (el-get-self-update . 3)
+ (auto-package-update-now . 1)
 )

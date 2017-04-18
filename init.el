@@ -164,3 +164,6 @@
 (setq jedi:key-show-doc (kbd "C-c d"))
 (ac-linum-workaround)
 (setq py-autopep8-options '("--max-line-length=79"))
+
+(package-initialize)
+(elpy-enable)

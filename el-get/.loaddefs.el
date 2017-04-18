@@ -2394,7 +2394,7 @@ version.
 ;;;***
 
 ;;;### (autoloads nil "py-autopep8/py-autopep8" "py-autopep8/py-autopep8.el"
-;;;;;;  (22711 4907 0 0))
+;;;;;;  (22721 18503 0 0))
 ;;; Generated autoloads from py-autopep8/py-autopep8.el
 
 (autoload 'py-autopep8 "py-autopep8/py-autopep8" "\
@@ -2611,9 +2611,8 @@ A mode for editing yasnippets
 ;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "elpy/elpy-django.el"
-;;;;;;  "elpy/elpy-pkg.el" "elpy/elpy-profile.el" "elpy/elpy-refactor.el"
-;;;;;;  "epl/epl.el" "org-mode/contrib/lisp/ob-csharp.el" "org-mode/contrib/lisp/ob-eukleides.el"
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "epl/epl.el"
+;;;;;;  "org-mode/contrib/lisp/ob-csharp.el" "org-mode/contrib/lisp/ob-eukleides.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-fomus.el" "org-mode/contrib/lisp/ob-julia.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-mathematica.el" "org-mode/contrib/lisp/ob-mathomatic.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-oz.el" "org-mode/contrib/lisp/ob-stata.el"
