@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- auto-package-update-now
- el-get-self-update
+ package-install
+ package-autoremove
+ package-list-packages
+ el-get-install
  undo
- eshell
- delete-file
- elpy-mode
- py-autopep8
+ el-get-list-packages
+ list-packages
 )
 
 ;; ----- smex-data -----
@@ -25,7 +25,7 @@
  (find-tag . 1)
  (find-file . 2)
  (floobits-join-workspace . 15)
- (package-install . 17)
+ (package-install . 22)
  (floobits-clear-highlights . 3)
  (py-autopep8 . 3)
  (floobits-leave-workspace . 4)
@@ -34,8 +34,8 @@
  (switch-to-next-buffer . 6)
  (kill-buffer . 12)
  (quit-window . 7)
- (package-list-packages . 1)
- (buffer-menu . 4)
+ (package-list-packages . 4)
+ (buffer-menu . 6)
  (undo-tree-redo . 11)
  (mark-page . 2)
  (simpleclip-copy . 2)
@@ -52,9 +52,9 @@
  (pymacs-eval . 1)
  (freex-mode . 5)
  (eval-buffer . 9)
- (org-wiki-index . 8)
+ (org-wiki-index . 17)
  (org-wiki-helm . 9)
- (org-wiki-make-page . 2)
+ (org-wiki-make-page . 4)
  (org-wiki-make-menu . 1)
  (org-wiki-close . 1)
  (org-wiki-link . 7)
@@ -64,7 +64,7 @@
  (org-list-send-list . 1)
  (org-wiki-export-html . 1)
  (org-wiki-server-toggle . 2)
- (org-wiki-panel . 1)
+ (org-wiki-panel . 2)
  (org-html-export-as-html . 2)
  (freex-meta-find . 10)
  (org-mode . 8)
@@ -75,24 +75,24 @@
  (freex-meta-edit-tag-parents-in-minibuffer . 1)
  (mouse-major-mode-menu . 1)
  (describe-minor-mode-from-indicator . 1)
- (el-get-install . 6)
+ (el-get-install . 8)
  (manage-minor-mode . 1)
  (muse-mode . 1)
  (package-refresh-contents . 1)
- (tetris . 2)
+ (tetris . 3)
  (org-capture . 3)
  (cython-mode . 1)
  (org-refile . 9)
  (customize-variable . 2)
  (org-schedule . 1)
  (org-deadline . 1)
- (org-wiki-insert . 2)
+ (org-wiki-insert . 8)
  (neotree . 1)
  (inferior-python-mode . 4)
- (list-packages . 3)
- (package-menu-mark-upgrades . 1)
- (eshell . 16)
- (undo . 24)
+ (list-packages . 4)
+ (package-menu-mark-upgrades . 2)
+ (eshell . 17)
+ (undo . 36)
  (next-error . 1)
  (flycheck-error-list-mode . 2)
  (flycheck-buffer . 2)
@@ -103,10 +103,18 @@
  (jedi-mode . 2)
  (yank . 1)
  (el-get-update . 1)
- (el-get-update-all . 1)
+ (el-get-update-all . 2)
  (replace-string . 1)
  (elpy-mode . 2)
  (delete-file . 1)
  (el-get-self-update . 3)
- (auto-package-update-now . 1)
+ (auto-package-update-now . 4)
+ (undo-tree-visualize . 25)
+ (pong . 1)
+ (hanoi . 1)
+ (blackbox . 1)
+ (snake . 7)
+ (snake-mode . 1)
+ (el-get-list-packages . 1)
+ (package-autoremove . 1)
 )

@@ -25,16 +25,24 @@
  ;; If there is more than one, they won't work right.
  '(mouse-1-click-in-non-selected-windows t)
  '(org-agenda-files nil)
+ '(org-directory "~/Dropbox/org_notes")
  '(org-refile-targets (quote ((org-agenda-files :maxlevel . 6))))
  '(package-selected-packages
    (quote
-    (elpy jedi exec-path-from-shell flycheck-pyflakes flycheck pep8 ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
+    (evil-surround evil-goggles auctex-lua latex-preview-pane latex-unicode-math-mode cdlatex-mode latex-extra latex-math-preview latex-pretty-symbols cdlatex rainbow-mode pretty-symbols pretty-mode-plus async-await org-download flyspell-correct org-brain smooth-scrolling elpy jedi exec-path-from-shell flycheck-pyflakes flycheck pep8 ipython neotree muse manage-minor-mode cython-mode org-wiki helm-core auto-package-update elscreen dashboard workgroups2 slack guide-key discover go-mode better-shell simpleclip ob-ipython ein linum-relative py-autopep8 zenburn-theme floobits smex helm evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+(add-hook 'org-mode-hook 'org-toggle-pretty-entities)
+
+(require 'ox-latex)
+(setq org-latex-create-formula-image-program 'dvipng)
 
 (global-set-key (kbd "<C-up>") 'shrink-window)
 (global-set-key (kbd "<C-down>") 'enlarge-window)
@@ -43,6 +51,8 @@
 
 (require 'evil)
 (evil-mode 1)
+(evil-goggles-mode)
+
 
 (show-paren-mode 1)
 
@@ -75,6 +85,9 @@
 
 (require 'smex)
 (smex-initialize)
+
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 
 (require 'autopair)
 (autopair-global-mode 1)
@@ -122,26 +135,32 @@
 (projects . 5)))
 
 ;; Pymacs
-(add-to-list 'load-path "~/.emacs.d/el-get/pymacs")
-(setq pymacs-load-path '( "~/.emacs.d/el-get/rope"
-                          "~/.emacs.d/el-get/ropemode"
-                          "~/.emacs.d/el-get/ropemacs"))
-(add-to-list 'load-path "~/.emacs.d/el-get/rope")
-(add-to-list 'load-path "~/.emacs.d/el-get/ropemode")
-(add-to-list 'load-path "~/.emacs.d/el-get/ropemacs")
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+;;(add-to-list 'load-path "~/.emacs.d/el-get/pymacs")
+;;(setq pymacs-load-path '( "~/.emacs.d/el-get/rope"
+;;                          "~/.emacs.d/el-get/ropemode"
+;;                          "~/.emacs.d/el-get/ropemacs"))
+;;(add-to-list 'load-path "~/.emacs.d/el-get/rope")
+;;(add-to-list 'load-path "~/.emacs.d/el-get/ropemode")
+;;(add-to-list 'load-path "~/.emacs.d/el-get/ropemacs")
+;;(autoload 'pymacs-apply "pymacs")
+;;(autoload 'pymacs-call "pymacs")
+;;(autoload 'pymacs-eval "pymacs" nil t)
+;;(autoload 'pymacs-exec "pymacs" nil t)
+;;(autoload 'pymacs-load "pymacs" nil t)
+;;(pymacs-load "ropemacs" "rope-")
+;;(setq ropemacs-enable-autoimport t)
 
-(add-to-list 'load-path "/Users/michael/.emacs.d/el-get/freex/") (load "freex-conf")
+;;(add-to-list 'load-path "/Users/michael/.emacs.d/el-get/freex/") (load
+;;"freex-conf")
 
 (require 'org-wiki)
 (org-wiki-make-menu)
 (setq org-wiki-location "~/Dropbox/org_notes/")
+
+
+(require 'org-download)
+(add-to-list 'load-path"~/Dropbox/org_notes/lib/images")
+(add-hook 'org-mode-hook (lambda () (setq org-download-image-dir "~/Dropbox/org_notes/lib/images")))
 
 (defvar ido-dont-ignore-buffer-names '("*dashboard*"))
 
@@ -152,7 +171,7 @@
 
 (setq ido-ignore-buffers (list "\\` " #'ido-ignore-most-star-buffers))
 (kill-buffer "*Messages*")
-(kill-buffer "*Pymacs*")
+;;(kill-buffer "*Pymacs*")
 (kill-buffer "*scratch*")
 
 

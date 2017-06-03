@@ -36,8 +36,64 @@ See `autopair-mode' for more information on Autopair mode.
 
 ;;;***
 
+;;;### (autoloads nil "cdlatex-mode/cdlatex" "cdlatex-mode/cdlatex.el"
+;;;;;;  (22828 3918 0 0))
+;;; Generated autoloads from cdlatex-mode/cdlatex.el
+
+(autoload 'turn-on-cdlatex "cdlatex-mode/cdlatex" "\
+Turn on CDLaTeX minor mode.
+
+\(fn)" nil nil)
+
+(autoload 'cdlatex-mode "cdlatex-mode/cdlatex" "\
+Minor mode for editing scientific LaTeX documents.  Here is a
+list of features: \\<cdlatex-mode-map>
+
+                           KEYWORD COMMANDS
+                           ----------------
+Many CDLaTeX commands are activated with an abbrev-like mechanism.
+When a keyword is typed followed `\\[cdlatex-tab]', the keyword is deleted
+from the buffer and a command is executed.  You can get a full list
+of these commands with `\\[cdlatex-command-help]'.
+For example, when you type `fr<TAB>', CDLaTeX will insert `\\frac{}{}'.
+
+When inserting templates like '\\frac{}{}', the cursor is positioned
+properly.  Use `\\[cdlatex-tab]' to move through templates.  `\\[cdlatex-tab]' also kills
+unnecessary braces around subscripts and superscripts at point.
+
+                     MATH CHARACTERS AND ACCENTS
+                     ---------------------------
+\\[cdlatex-math-symbol]  followed by any character inserts a LaTeX math character
+      e.g. \\[cdlatex-math-symbol]e   => \\epsilon
+\\[cdlatex-math-symbol]\\[cdlatex-math-symbol] followed by any character inserts other LaTeX math character
+      e.g. \\[cdlatex-math-symbol]\\[cdlatex-math-symbol]e  => \\varepsilon
+\\[cdlatex-math-modify]  followed by character puts a math accent on a letter or symbol
+      e.g. \\[cdlatex-math-symbol]a\\[cdlatex-math-modify]~ => \\tilde{\\alpha}
+
+CDLaTeX is aware of the math environments in LaTeX and modifies the
+workings of some functions according to the current status.
+
+                             ONLINE HELP
+                             -----------
+After pressing \\[cdlatex-math-symbol] or \\[cdlatex-math-modify], CDLaTeX waits for a short time for the second character.
+If that does not come, it will pop up a window displaying the available
+characters and their meanings.
+
+                             KEY BINDINGS
+                             ------------
+\\{cdlatex-mode-map}
+
+Under X, many functions will be available also in a menu on the menu bar.
+
+Entering cdlatex-mode calls the hook cdlatex-mode-hook.
+------------------------------------------------------------------------------
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil "company-mode/company" "company-mode/company.el"
-;;;;;;  (22721 17531 0 0))
+;;;;;;  (22828 2808 0 0))
 ;;; Generated autoloads from company-mode/company.el
 
 (autoload 'company-mode "company-mode/company" "\
@@ -187,7 +243,7 @@ comments or strings.
 ;;;***
 
 ;;;### (autoloads nil "company-mode/company-files" "company-mode/company-files.el"
-;;;;;;  (22721 17531 0 0))
+;;;;;;  (22792 54350 0 0))
 ;;; Generated autoloads from company-mode/company-files.el
 
 (autoload 'company-files "company-mode/company-files" "\
@@ -319,7 +375,7 @@ shadow backends that come after it.  Recommended usages:
 ;;;***
 
 ;;;### (autoloads nil "cython-mode/cython-mode" "cython-mode/cython-mode.el"
-;;;;;;  (22717 44957 0 0))
+;;;;;;  (22828 3925 0 0))
 ;;; Generated autoloads from cython-mode/cython-mode.el
 
 (add-to-list 'auto-mode-alist '("\\.pyx\\'" . cython-mode))
@@ -531,7 +587,7 @@ Display a list of packages.
 ;;;***
 
 ;;;### (autoloads nil "find-file-in-project/find-file-in-project"
-;;;;;;  "find-file-in-project/find-file-in-project.el" (22721 17536
+;;;;;;  "find-file-in-project/find-file-in-project.el" (22828 2859
 ;;;;;;  0 0))
 ;;; Generated autoloads from find-file-in-project/find-file-in-project.el
 
@@ -667,6 +723,14 @@ If OPEN-ANOTHER-WINDOW is not nil, the file will be opened in new window.
 
 \(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
 
+(autoload 'find-file-with-similar-name "find-file-in-project/find-file-in-project" "\
+Use base name of current file as keyword which could be further stripped
+by `ffip-strip-file-name-regex'.
+
+If OPEN-ANOTHER-WINDOW is not nil, the file will be opened in new window.
+
+\(fn &optional OPEN-ANOTHER-WINDOW)" t nil)
+
 (autoload 'find-file-in-current-directory-by-selected "find-file-in-project/find-file-in-project" "\
 Like `find-file-in-project-by-selected'.  But search only in current directory.
 
@@ -712,14 +776,88 @@ File file(s) in current hunk.
 (autoload 'ffip-show-diff "find-file-in-project/find-file-in-project" "\
 Show the diff output by excuting selected `ffip-diff-backends'.
 NUM is the index selected backend from `ffip-diff-backends'.
-NUM is zero based.  Its default value is zero.
+NUM is zero based whose default value is zero.
 
 \(fn &optional NUM)" t nil)
 
 ;;;***
 
+;;;### (autoloads nil "flyspell/flyspell-1.7q" "flyspell/flyspell-1.7q.el"
+;;;;;;  (22828 3924 0 0))
+;;; Generated autoloads from flyspell/flyspell-1.7q.el
+
+(defvar flyspell-mode-line-string " Fly" "\
+*String displayed on the modeline when flyspell is active.
+Set this to nil if you don't want a modeline indicator.")
+
+(custom-autoload 'flyspell-mode-line-string "flyspell/flyspell-1.7q" t)
+
+(autoload 'flyspell-prog-mode "flyspell/flyspell-1.7q" "\
+Turn on `flyspell-mode' for comments and strings.
+
+\(fn)" t nil)
+
+(defvar flyspell-mode nil)
+
+(defvar flyspell-mode-map (make-sparse-keymap))
+
+(autoload 'flyspell-mode "flyspell/flyspell-1.7q" "\
+Minor mode performing on-the-fly spelling checking.
+Ispell is automatically spawned on background for each entered words.
+The default flyspell behavior is to highlight incorrect words.
+With no argument, this command toggles Flyspell mode.
+With a prefix argument ARG, turn Flyspell minor mode on iff ARG is positive.
+  
+Bindings:
+\\[ispell-word]: correct words (using Ispell).
+\\[flyspell-auto-correct-word]: automatically correct word.
+\\[flyspell-auto-correct-previous-word]: automatically correct the last misspelled word.
+\\[flyspell-correct-word] (or down-mouse-2): popup correct words.
+
+Hooks:
+This runs `flyspell-mode-hook' after flyspell is entered.
+
+Remark:
+`flyspell-mode' uses `ispell-mode'.  Thus all Ispell options are
+valid.  For instance, a personal dictionary can be used by
+invoking `ispell-change-dictionary'.
+
+Consider using the `ispell-parser' to check your text.  For instance
+consider adding:
+\(add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
+in your .emacs file.
+
+\\[flyspell-region] checks all words inside a region.
+\\[flyspell-buffer] checks the whole buffer.
+
+\(fn &optional ARG)" t nil)
+
+(if (fboundp 'add-minor-mode) (add-minor-mode 'flyspell-mode 'flyspell-mode-line-string flyspell-mode-map nil 'flyspell-mode) (or (assoc 'flyspell-mode minor-mode-alist) (setq minor-mode-alist (cons '(flyspell-mode flyspell-mode-line-string) minor-mode-alist))) (or (assoc 'flyspell-mode minor-mode-map-alist) (setq minor-mode-map-alist (cons (cons 'flyspell-mode flyspell-mode-map) minor-mode-map-alist))))
+
+(autoload 'flyspell-version "flyspell/flyspell-1.7q" "\
+The flyspell version
+
+\(fn)" t nil)
+
+(autoload 'flyspell-mode-off "flyspell/flyspell-1.7q" "\
+Turn Flyspell mode off.
+
+\(fn)" nil nil)
+
+(autoload 'flyspell-region "flyspell/flyspell-1.7q" "\
+Flyspell text between BEG and END.
+
+\(fn BEG END)" t nil)
+
+(autoload 'flyspell-buffer "flyspell/flyspell-1.7q" "\
+Flyspell whole buffer.
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil "highlight-indentation/highlight-indentation"
-;;;;;;  "highlight-indentation/highlight-indentation.el" (22721 17537
+;;;;;;  "highlight-indentation/highlight-indentation.el" (22792 54357
 ;;;;;;  0 0))
 ;;; Generated autoloads from highlight-indentation/highlight-indentation.el
 
@@ -738,6 +876,49 @@ from major mode
 (autoload 'highlight-indentation-current-column-mode "highlight-indentation/highlight-indentation" "\
 Hilight Indentation minor mode displays a vertical bar
 corresponding to the indentation of the current line
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "latex-preview-pane/latex-preview-pane" "latex-preview-pane/latex-preview-pane.el"
+;;;;;;  (22828 4704 0 0))
+;;; Generated autoloads from latex-preview-pane/latex-preview-pane.el
+
+(autoload 'latex-preview-pane-enable "latex-preview-pane/latex-preview-pane" "\
+Enable `latex-preview-pane-mode' in `latex-mode'.
+
+\(fn)" nil nil)
+
+(autoload 'init-latex-preview-pane "latex-preview-pane/latex-preview-pane" "\
+
+
+\(fn)" nil nil)
+
+(autoload 'latex-preview-update "latex-preview-pane/latex-preview-pane" "\
+
+
+\(fn)" t nil)
+
+(autoload 'latex-preview-pane-update "latex-preview-pane/latex-preview-pane" "\
+
+
+\(fn)" t nil)
+
+(autoload 'latex-preview-pane-update-p "latex-preview-pane/latex-preview-pane" "\
+
+
+\(fn)" nil nil)
+
+(autoload 'latex-preview-pane-mode "latex-preview-pane/latex-preview-pane" "\
+Toggle Latex Preview Pane Mode.
+     Interactively with no argument, this command toggles the mode.
+     A positive prefix argument enables the mode, any other prefix
+     argument disables it.  From Lisp, argument omitted or nil enables
+     the mode, `toggle' toggles the state.
+     
+     When Latex Preview Pane mode is enabled, saving a latex file will cause 
+     a PDF preview pane of your document to appear.
 
 \(fn &optional ARG)" t nil)
 
@@ -879,7 +1060,7 @@ Set up org-eldoc documentation function.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/contrib/lisp/org-link-edit" "org-mode/contrib/lisp/org-link-edit.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22828 2861 0 0))
 ;;; Generated autoloads from org-mode/contrib/lisp/org-link-edit.el
 
 (autoload 'org-link-edit-forward-slurp "org-mode/contrib/lisp/org-link-edit" "\
@@ -959,6 +1140,21 @@ beginning of the link.
 If N is negative, barf trailing blobs instead of leading blobs.
 
 \(fn &optional N)" t nil)
+
+(autoload 'org-link-edit-transport-next-link "org-mode/contrib/lisp/org-link-edit" "\
+Move the next link to point.
+
+If the region is active, use the selected text as the link's
+description.  Otherwise, use the word at point.
+
+With prefix argument PREVIOUS, move the previous link instead of
+the next link.
+
+Non-interactively, use the text between BEG and END as the
+description, moving the next (or previous) link relative BEG and
+END.
+
+\(fn &optional PREVIOUS BEG END)" t nil)
 
 ;;;***
 
@@ -1238,7 +1434,7 @@ Open A Dired buffer with unused screenshots marked
 ;;;***
 
 ;;;### (autoloads nil "org-mode/contrib/lisp/org-toc" "org-mode/contrib/lisp/org-toc.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22792 54359 0 0))
 ;;; Generated autoloads from org-mode/contrib/lisp/org-toc.el
 
 (autoload 'org-toc-show "org-mode/contrib/lisp/org-toc" "\
@@ -1560,7 +1756,7 @@ the reports is done using the TaskJuggler GUI.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org" "org-mode/lisp/org.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22828 2861 0 0))
 ;;; Generated autoloads from org-mode/lisp/org.el
 
 (autoload 'org-babel-do-load-languages "org-mode/lisp/org" "\
@@ -1710,9 +1906,9 @@ Store an org-link to the current location.
 This link is added to `org-stored-links' and can later be inserted
 into an Org buffer with `org-insert-link' (`\\[org-insert-link]').
 
-For some link types, a `\\[universal-argument]' prefix ARG is interpreted.
-For links to Usenet articles, ARG negates `org-gnus-prefer-web-links'.
-For file links, ARG negates `org-context-in-file-links'.
+For some link types, a `\\[universal-argument]' prefix ARG is interpreted.  A single
+`\\[universal-argument]' negates `org-context-in-file-links' for file links or
+`org-gnus-prefer-web-links' for links to Usenet articles.
 
 A `\\[universal-argument] \\[universal-argument]' prefix ARG forces skipping storing functions that are not
 part of Org core.
@@ -1783,7 +1979,7 @@ Call the customize function with org as argument.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-agenda" "org-mode/lisp/org-agenda.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22828 2861 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-agenda.el
 
 (autoload 'org-toggle-sticky-agenda "org-mode/lisp/org-agenda" "\
@@ -2056,7 +2252,7 @@ to override `appt-message-warning-time'.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-capture" "org-mode/lisp/org-capture.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22828 2861 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-capture.el
 
 (autoload 'org-capture-string "org-mode/lisp/org-capture" "\
@@ -2081,6 +2277,9 @@ With a `\\[universal-argument] \\[universal-argument]' prefix argument, go to th
 
 When called with a `C-0' (zero) prefix, insert a template at point.
 
+When called with a `C-1' (one) prefix, force prompting for a date when
+a datetree entry is made.
+
 ELisp programs can set KEYS to a string associated with a template
 in `org-capture-templates'.  In this case, interactive selection
 will be bypassed.
@@ -2100,7 +2299,7 @@ Set `org-capture-templates' to be similar to `org-remember-templates'.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-colview" "org-mode/lisp/org-colview.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22828 2861 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-colview.el
 
 (autoload 'org-columns-remove-overlays "org-mode/lisp/org-colview" "\
@@ -2169,7 +2368,7 @@ Turn on or update column view in the agenda.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-compat" "org-mode/lisp/org-compat.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22792 54359 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-compat.el
 
 (autoload 'org-check-version "org-mode/lisp/org-compat" "\
@@ -2180,7 +2379,7 @@ Try very hard to provide sensible version strings.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-duration" "org-mode/lisp/org-duration.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22792 54359 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-duration.el
 
 (autoload 'org-duration-set-regexps "org-mode/lisp/org-duration" "\
@@ -2234,7 +2433,7 @@ with \"H:MM:SS\" format, return `h:mm:ss'.  Otherwise, return
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-lint" "org-mode/lisp/org-lint.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22792 54359 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-lint.el
 
 (autoload 'org-lint "org-mode/lisp/org-lint" "\
@@ -2251,7 +2450,7 @@ ARG can also be a list of checker names, as symbols, to run.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-macs" "org-mode/lisp/org-macs.el"
-;;;;;;  (22667 39905 0 0))
+;;;;;;  (22828 2861 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-macs.el
 
 (autoload 'org-load-noerror-mustsuffix "org-mode/lisp/org-macs" "\
@@ -2262,7 +2461,7 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-version" "org-mode/lisp/org-version.el"
-;;;;;;  (22717 44951 0 0))
+;;;;;;  (22828 3925 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-version.el
 
 (autoload 'org-release "org-mode/lisp/org-version" "\
@@ -2612,6 +2811,7 @@ A mode for editing yasnippets
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
 ;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "epl/epl.el"
+;;;;;;  "ispell-multi/ispell-multi.el.gz" "latex-preview-pane/latex-preview-pane-pkg.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-csharp.el" "org-mode/contrib/lisp/ob-eukleides.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-fomus.el" "org-mode/contrib/lisp/ob-julia.el"
 ;;;;;;  "org-mode/contrib/lisp/ob-mathematica.el" "org-mode/contrib/lisp/ob-mathomatic.el"
@@ -2647,17 +2847,17 @@ A mode for editing yasnippets
 ;;;;;;  "org-mode/lisp/ob-eval.el" "org-mode/lisp/ob-exp.el" "org-mode/lisp/ob-forth.el"
 ;;;;;;  "org-mode/lisp/ob-fortran.el" "org-mode/lisp/ob-gnuplot.el"
 ;;;;;;  "org-mode/lisp/ob-groovy.el" "org-mode/lisp/ob-haskell.el"
-;;;;;;  "org-mode/lisp/ob-io.el" "org-mode/lisp/ob-java.el" "org-mode/lisp/ob-js.el"
-;;;;;;  "org-mode/lisp/ob-keys.el" "org-mode/lisp/ob-latex.el" "org-mode/lisp/ob-ledger.el"
-;;;;;;  "org-mode/lisp/ob-lilypond.el" "org-mode/lisp/ob-lisp.el"
-;;;;;;  "org-mode/lisp/ob-lob.el" "org-mode/lisp/ob-lua.el" "org-mode/lisp/ob-makefile.el"
-;;;;;;  "org-mode/lisp/ob-matlab.el" "org-mode/lisp/ob-maxima.el"
-;;;;;;  "org-mode/lisp/ob-mscgen.el" "org-mode/lisp/ob-ocaml.el"
-;;;;;;  "org-mode/lisp/ob-octave.el" "org-mode/lisp/ob-org.el" "org-mode/lisp/ob-perl.el"
-;;;;;;  "org-mode/lisp/ob-picolisp.el" "org-mode/lisp/ob-plantuml.el"
-;;;;;;  "org-mode/lisp/ob-processing.el" "org-mode/lisp/ob-python.el"
-;;;;;;  "org-mode/lisp/ob-ref.el" "org-mode/lisp/ob-ruby.el" "org-mode/lisp/ob-sass.el"
-;;;;;;  "org-mode/lisp/ob-scala.el" "org-mode/lisp/ob-scheme.el"
+;;;;;;  "org-mode/lisp/ob-hledger.el" "org-mode/lisp/ob-io.el" "org-mode/lisp/ob-java.el"
+;;;;;;  "org-mode/lisp/ob-js.el" "org-mode/lisp/ob-keys.el" "org-mode/lisp/ob-latex.el"
+;;;;;;  "org-mode/lisp/ob-ledger.el" "org-mode/lisp/ob-lilypond.el"
+;;;;;;  "org-mode/lisp/ob-lisp.el" "org-mode/lisp/ob-lob.el" "org-mode/lisp/ob-lua.el"
+;;;;;;  "org-mode/lisp/ob-makefile.el" "org-mode/lisp/ob-matlab.el"
+;;;;;;  "org-mode/lisp/ob-maxima.el" "org-mode/lisp/ob-mscgen.el"
+;;;;;;  "org-mode/lisp/ob-ocaml.el" "org-mode/lisp/ob-octave.el"
+;;;;;;  "org-mode/lisp/ob-org.el" "org-mode/lisp/ob-perl.el" "org-mode/lisp/ob-picolisp.el"
+;;;;;;  "org-mode/lisp/ob-plantuml.el" "org-mode/lisp/ob-processing.el"
+;;;;;;  "org-mode/lisp/ob-python.el" "org-mode/lisp/ob-ref.el" "org-mode/lisp/ob-ruby.el"
+;;;;;;  "org-mode/lisp/ob-sass.el" "org-mode/lisp/ob-scala.el" "org-mode/lisp/ob-scheme.el"
 ;;;;;;  "org-mode/lisp/ob-screen.el" "org-mode/lisp/ob-sed.el" "org-mode/lisp/ob-shell.el"
 ;;;;;;  "org-mode/lisp/ob-shen.el" "org-mode/lisp/ob-sql.el" "org-mode/lisp/ob-sqlite.el"
 ;;;;;;  "org-mode/lisp/ob-stan.el" "org-mode/lisp/ob-table.el" "org-mode/lisp/ob-tangle.el"
@@ -2672,8 +2872,8 @@ A mode for editing yasnippets
 ;;;;;;  "org-mode/lisp/org-habit.el" "org-mode/lisp/org-id.el" "org-mode/lisp/org-indent.el"
 ;;;;;;  "org-mode/lisp/org-info.el" "org-mode/lisp/org-inlinetask.el"
 ;;;;;;  "org-mode/lisp/org-install.el" "org-mode/lisp/org-irc.el"
-;;;;;;  "org-mode/lisp/org-list.el" "org-mode/lisp/org-macro.el"
-;;;;;;  "org-mode/lisp/org-mhe.el" "org-mode/lisp/org-mobile.el"
+;;;;;;  "org-mode/lisp/org-list.el" "org-mode/lisp/org-loaddefs.el"
+;;;;;;  "org-mode/lisp/org-macro.el" "org-mode/lisp/org-mhe.el" "org-mode/lisp/org-mobile.el"
 ;;;;;;  "org-mode/lisp/org-mouse.el" "org-mode/lisp/org-pcomplete.el"
 ;;;;;;  "org-mode/lisp/org-plot.el" "org-mode/lisp/org-protocol.el"
 ;;;;;;  "org-mode/lisp/org-rmail.el" "org-mode/lisp/org-src.el" "org-mode/lisp/org-table.el"
@@ -2683,7 +2883,7 @@ A mode for editing yasnippets
 ;;;;;;  "org-mode/lisp/ox-odt.el" "org-mode/lisp/ox-org.el" "org-mode/lisp/ox-publish.el"
 ;;;;;;  "org-mode/lisp/ox-texinfo.el" "org-mode/lisp/ox.el" "s/s.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (22721 17543 0 0))
+;;;;;;  (22828 4704 0 0))
 
 ;;;***
 

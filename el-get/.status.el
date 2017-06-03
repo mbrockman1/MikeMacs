@@ -1,9 +1,12 @@
-((auto-pair-plus status "installed" recipe
+((auctex status "required" recipe nil)
+ (auto-pair-plus status "installed" recipe
 		 (:name auto-pair-plus :description "Autopair handler to extend Autopair behavior." :type github :pkgname "emacsmirror/auto-pair-plus" :autoloads nil :depends autopair))
  (autopair status "installed" recipe
 	   (:name autopair :website "https://github.com/capitaomorte/autopair" :description "Autopair is an extension to the Emacs text editor that automatically pairs braces and quotes." :type github :pkgname "capitaomorte/autopair" :features autopair))
  (autopep8 status "installed" recipe
 	   (:name autopep8 :description "autopep8 wrapper for emacs" :type http :url "https://gist.github.com/whirm/6122031/raw/28d0d47a95a9006b7fbb8d5ac5203577c52b9534/autopep8.el" :features autopep8))
+ (cdlatex-mode status "installed" recipe
+	       (:name cdlatex-mode :description "a minor mode which re-implements many features also found in the AUCTeX LaTeX mode." :type http :url "http://staff.science.uva.nl/~dominik/Tools/cdlatex/cdlatex.el"))
  (company-mode status "installed" recipe
 	       (:name company-mode :website "http://company-mode.github.io/" :description "Modular in-buffer completion framework for Emacs" :type github :pkgname "company-mode/company-mode"))
  (cython-mode status "installed" recipe
@@ -36,8 +39,14 @@
       (:name epl :description "EPL provides a convenient high-level API for various package.el versions, and aims to overcome its most striking idiocies." :type github :pkgname "cask/epl"))
  (find-file-in-project status "installed" recipe
 		       (:name find-file-in-project :type github :pkgname "technomancy/find-file-in-project" :description "Quick access to project files in Emacs"))
+ (flyspell status "installed" recipe
+	   (:name flyspell :website "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell.html" :description "On-the-fly spell checker." :type http :url "http://www-sop.inria.fr/members/Manuel.Serrano/flyspell/flyspell-1.7q.el"))
  (highlight-indentation status "installed" recipe
 			(:name highlight-indentation :description "Function for highlighting indentation" :type git :url "https://github.com/antonj/Highlight-Indentation-for-Emacs"))
+ (ispell-multi status "installed" recipe
+	       (:name ispell-multi :description "Multiple ispell processes and multiple flyspell languages" :website "http://www.dur.ac.uk/p.j.heslin/Software/Emacs" :type http :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/ispell-multi.el" :localname "ispell-multi.el.gz" :features ispell-multi))
+ (latex-preview-pane status "installed" recipe
+		     (:name latex-preview-pane :website "http://www.emacswiki.org/emacs/LaTeXPreviewPane" :description "latex-preview-pane is a minor mode for Emacs that enables you to preview your LaTeX files directly in Emacs. It supports PDF previews, your choice of pdflatex or xelatex, and it highlights errors in your LaTeX buffer." :type github :pkgname "jsinglet/latex-preview-pane"))
  (let-alist status "installed" recipe
 	    (:name let-alist :description "Easily let-bind values of an assoc-list by their names." :builtin "25.0.50" :type elpa :url "https://elpa.gnu.org/packages/let-alist.html"))
  (manage-minor-mode status "installed" recipe
