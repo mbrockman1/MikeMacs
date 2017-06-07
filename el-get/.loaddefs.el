@@ -37,7 +37,7 @@ See `autopair-mode' for more information on Autopair mode.
 ;;;***
 
 ;;;### (autoloads nil "cdlatex-mode/cdlatex" "cdlatex-mode/cdlatex.el"
-;;;;;;  (22828 3918 0 0))
+;;;;;;  (22840 4121 0 0))
 ;;; Generated autoloads from cdlatex-mode/cdlatex.el
 
 (autoload 'turn-on-cdlatex "cdlatex-mode/cdlatex" "\
@@ -89,6 +89,27 @@ Entering cdlatex-mode calls the hook cdlatex-mode-hook.
 ------------------------------------------------------------------------------
 
 \(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "cdlatex-mode/texmathp" "cdlatex-mode/texmathp.el"
+;;;;;;  (22828 6405 0 0))
+;;; Generated autoloads from cdlatex-mode/texmathp.el
+
+(autoload 'texmathp "cdlatex-mode/texmathp" "\
+Determine if point is inside (La)TeX math mode.
+Returns t or nil.  Additional info is placed into `texmathp-why'.
+The functions assumes that you have (almost) syntactically correct (La)TeX in
+the buffer.
+See the variable `texmathp-tex-commands' about which commands are checked.
+
+\(fn)" t nil)
+
+(autoload 'texmathp-match-switch "cdlatex-mode/texmathp" "\
+Search backward for any of the math switches.
+Limit searched to BOUND.
+
+\(fn BOUND)" nil nil)
 
 ;;;***
 
@@ -375,7 +396,7 @@ shadow backends that come after it.  Recommended usages:
 ;;;***
 
 ;;;### (autoloads nil "cython-mode/cython-mode" "cython-mode/cython-mode.el"
-;;;;;;  (22828 3925 0 0))
+;;;;;;  (22840 4133 0 0))
 ;;; Generated autoloads from cython-mode/cython-mode.el
 
 (add-to-list 'auto-mode-alist '("\\.pyx\\'" . cython-mode))
@@ -587,7 +608,7 @@ Display a list of packages.
 ;;;***
 
 ;;;### (autoloads nil "find-file-in-project/find-file-in-project"
-;;;;;;  "find-file-in-project/find-file-in-project.el" (22828 2859
+;;;;;;  "find-file-in-project/find-file-in-project.el" (22834 53829
 ;;;;;;  0 0))
 ;;; Generated autoloads from find-file-in-project/find-file-in-project.el
 
@@ -780,10 +801,25 @@ NUM is zero based whose default value is zero.
 
 \(fn &optional NUM)" t nil)
 
+(autoload 'ffip-show-diff-by-description "find-file-in-project/find-file-in-project" "\
+Show the diff output by excuting selected `ffip-diff-backends. 
+
+\(fn)" t nil)
+
+(autoload 'ffip-diff-apply-hunk "find-file-in-project/find-file-in-project" "\
+Apply current hunk in `diff-mode'. Try to locate the file to patch
+from `recentf-list'. If nothing is found in `recentf-list', user need
+specify the file path.
+It's same as `diff-apply-hunk' except it can find file in `recentf-list'.
+So `diff-apply-hunk' can be replaced by `ffip-diff-apply-hunk'.
+Please read documenation of `diff-apply-hunk' to get more details.
+
+\(fn &optional REVERSE)" t nil)
+
 ;;;***
 
 ;;;### (autoloads nil "flyspell/flyspell-1.7q" "flyspell/flyspell-1.7q.el"
-;;;;;;  (22828 3924 0 0))
+;;;;;;  (22840 4127 0 0))
 ;;; Generated autoloads from flyspell/flyspell-1.7q.el
 
 (defvar flyspell-mode-line-string " Fly" "\
@@ -1756,7 +1792,7 @@ the reports is done using the TaskJuggler GUI.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org" "org-mode/lisp/org.el"
-;;;;;;  (22828 2861 0 0))
+;;;;;;  (22840 4126 0 0))
 ;;; Generated autoloads from org-mode/lisp/org.el
 
 (autoload 'org-babel-do-load-languages "org-mode/lisp/org" "\
@@ -1979,7 +2015,7 @@ Call the customize function with org as argument.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-agenda" "org-mode/lisp/org-agenda.el"
-;;;;;;  (22828 2861 0 0))
+;;;;;;  (22836 44313 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-agenda.el
 
 (autoload 'org-toggle-sticky-agenda "org-mode/lisp/org-agenda" "\
@@ -2252,7 +2288,7 @@ to override `appt-message-warning-time'.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-capture" "org-mode/lisp/org-capture.el"
-;;;;;;  (22828 2861 0 0))
+;;;;;;  (22834 53829 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-capture.el
 
 (autoload 'org-capture-string "org-mode/lisp/org-capture" "\
@@ -2299,7 +2335,7 @@ Set `org-capture-templates' to be similar to `org-remember-templates'.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-colview" "org-mode/lisp/org-colview.el"
-;;;;;;  (22828 2861 0 0))
+;;;;;;  (22834 53829 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-colview.el
 
 (autoload 'org-columns-remove-overlays "org-mode/lisp/org-colview" "\
@@ -2368,7 +2404,7 @@ Turn on or update column view in the agenda.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-compat" "org-mode/lisp/org-compat.el"
-;;;;;;  (22792 54359 0 0))
+;;;;;;  (22840 4126 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-compat.el
 
 (autoload 'org-check-version "org-mode/lisp/org-compat" "\
@@ -2461,7 +2497,7 @@ Load FILE with optional arguments NOERROR and MUSTSUFFIX.
 ;;;***
 
 ;;;### (autoloads nil "org-mode/lisp/org-version" "org-mode/lisp/org-version.el"
-;;;;;;  (22828 3925 0 0))
+;;;;;;  (22840 4128 0 0))
 ;;; Generated autoloads from org-mode/lisp/org-version.el
 
 (autoload 'org-release "org-mode/lisp/org-version" "\
@@ -2883,7 +2919,7 @@ A mode for editing yasnippets
 ;;;;;;  "org-mode/lisp/ox-odt.el" "org-mode/lisp/ox-org.el" "org-mode/lisp/ox-publish.el"
 ;;;;;;  "org-mode/lisp/ox-texinfo.el" "org-mode/lisp/ox.el" "s/s.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (22828 4704 0 0))
+;;;;;;  (22840 4133 0 0))
 
 ;;;***
 
